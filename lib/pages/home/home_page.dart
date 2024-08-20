@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Color(0xFF002429),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
                 Text('Hoje')
