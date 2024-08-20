@@ -6,4 +6,22 @@ class Constants {
       BuildContext context) {
     return {'/Categorias': (context) => const CategoriesPage()};
   }
+
+  static List<String> categories() {
+    return [
+      'Anestésicos e Agulhas Gengival',
+      'Biossegurança',
+      'Descartáveis',
+      'Dentística e Estética',
+      'Ortodontia',
+      'Endodontia',
+      'Periféricos e Peças de Mão',
+      'Moldagem',
+      'Prótese',
+      'Cimentos',
+      'Instrumentos',
+      'Cirurgia e Periodontia',
+      'Radiologia'
+    ];
+  }
 }
