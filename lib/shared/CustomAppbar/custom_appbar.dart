@@ -5,30 +5,48 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String? currentRoute = ModalRoute.of(context)?.settings.name;
+
+    Color backgroundColor = const Color(0xFF00B4CC);
+    String? title;
+
+    if (currentRoute == '/Categorias') {
+      backgroundColor = const Color(0xFFEFEFEF);
+      title = 'Categorias';
+    }
+
     return AppBar(
-      backgroundColor: const Color(0xFF00B4CC),
-      leading: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: TextField(
-          decoration: InputDecoration(
-            hintText: 'Buscar',
-            fillColor: Colors.white,
-            filled: true,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.0),
-              borderSide: BorderSide.none,
+      backgroundColor: backgroundColor,
+      leading: title == null
+          ? Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Buscar',
+                  fillColor: Colors.white,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                    borderSide: BorderSide.none,
+                  ),
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                  suffixIcon: const Icon(
+                    Icons.search,
+                    color: Color(0xFF00B4CC),
+                  ),
+                ),
+                style: const TextStyle(height: 1.4),
+              ),
+            )
+          : null,
+      title: title == null
+          ? null
+          : Text(
+              title,
+              style: const TextStyle(color: Colors.black),
             ),
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-            suffixIcon: const Icon(
-              Icons.search,
-              color: Color(0xFF00B4CC),
-            ),
-          ),
-          style: const TextStyle(height: 1.4),
-        ),
-      ),
-      leadingWidth: double.infinity,
+      leadingWidth: title == null ? double.infinity : null,
     );
   }
 
