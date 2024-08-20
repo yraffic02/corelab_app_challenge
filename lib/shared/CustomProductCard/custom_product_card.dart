@@ -33,10 +33,6 @@ class ProductCard extends StatelessWidget {
 
     return Column(
       children: [
-        const Divider(
-          color: Color.fromRGBO(235, 241, 244, 1),
-          thickness: 1,
-        ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
           child: Row(
@@ -123,9 +119,9 @@ class ProductCard extends StatelessWidget {
             ],
           ),
         ),
-        const Divider(
-          color: Color.fromRGBO(235, 241, 244, 1),
-          thickness: 1,
+        Container(
+          height: 1.0,
+          color: const Color(0xFFEBF1F4),
         ),
       ],
     );
