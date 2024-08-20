@@ -16,7 +16,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
         Navigator.pushNamed(context, '/');
         break;
       case 1:
-        Navigator.pushNamed(context, '/Categorias');
+        Navigator.pushNamed(context, '/categories');
         break;
     }
     setState(() {
@@ -31,7 +31,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
     final currentRoute = ModalRoute.of(context)?.settings.name;
     if (currentRoute == '/') {
       _selectedIndex = 0;
-    } else if (currentRoute == '/Categorias') {
+    } else if (currentRoute == '/categories') {
       _selectedIndex = 1;
     }
   }

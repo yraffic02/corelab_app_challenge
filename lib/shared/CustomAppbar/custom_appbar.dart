@@ -10,7 +10,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     Color backgroundColor = const Color(0xFF00B4CC);
     String? title;
 
-    if (currentRoute == '/Categorias') {
+    if (currentRoute == '/categories') {
       backgroundColor = const Color(0xFFEFEFEF);
       title = 'Categorias';
     }
