@@ -151,10 +151,7 @@ class _SearchPageState extends State<SearchPage> {
             itemBuilder: (context, index) {
               final item = historyList[index];
               return ListTile(
-                leading: const Icon(
-                  Icons.access_time,
-                  color: Color.fromRGBO(124, 144, 148, 1),
-                ),
+                leading: Image.asset('lib/assets/iconTime.png'),
                 title: Text(
                   item.history,
                   style: const TextStyle(

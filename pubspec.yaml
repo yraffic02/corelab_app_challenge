@@ -67,6 +67,7 @@ flutter:
    - lib/assets/rafiki.png
    - lib/assets/img1.png
    - lib/assets/img2.png
+   - lib/assets/iconTime.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
