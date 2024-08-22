@@ -41,23 +41,23 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.home_outlined),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.category),
+          icon: Icon(Icons.category_outlined),
           label: 'Categorias',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.add_box),
+          icon: Icon(Icons.add_box_outlined),
           label: 'Anunciar',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
+          icon: Icon(Icons.favorite_border),
           label: 'Favoritos',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person),
+          icon: Icon(Icons.person_2_outlined),
           label: 'Conta',
         ),
       ],
