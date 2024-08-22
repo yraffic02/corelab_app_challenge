@@ -1,4 +1,7 @@
+import 'package:corelab_app_challenge/blocs/products/product_bloc.dart';
+import 'package:corelab_app_challenge/blocs/products/product_event.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CustomAppbar extends StatefulWidget implements PreferredSizeWidget {
@@ -34,14 +37,26 @@ class _CustomAppbarState extends State<CustomAppbar> {
     super.dispose();
   }
 
-  Future<void> _saveSearchHistory(String query) async {
+  Future<void> _saveSearchHistory(String query, BuildContext context) async {
+    if (query.isEmpty) {
+      return;
+    }
     final prefs = await SharedPreferences.getInstance();
     final List<String> history = prefs.getStringList('search_history') ?? [];
+
+    final productBloc = BlocProvider.of<ProductBloc>(context);
+    productBloc.add(SearchProducts(query: query));
 
     if (!history.contains(query)) {
       history.add(query);
       await prefs.setStringList('search_history', history);
     }
+  }
+
+  void _resetSearch(BuildContext context) {
+    Navigator.pushNamed(context, '/search');
+
+    _localSearchController.clear();
   }
 
   @override
@@ -84,7 +99,7 @@ class _CustomAppbarState extends State<CustomAppbar> {
                       }
                     },
                     onSubmitted: (String value) async {
-                      await _saveSearchHistory(value);
+                      await _saveSearchHistory(value, context);
                       _localSearchController.clear();
                     },
                     decoration: InputDecoration(
@@ -105,7 +120,7 @@ class _CustomAppbarState extends State<CustomAppbar> {
                                 size: 24,
                               ),
                               onPressed: () {
-                                _localSearchController.clear();
+                                _resetSearch(context);
                               },
                             )
                           : const Icon(

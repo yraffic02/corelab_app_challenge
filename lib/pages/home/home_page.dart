@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const ProductCard(
-            imageUrl: 'https://via.placeholder.com/100',
+            image: 'lib/assets/img1.png',
             productName: 'Condicionador Ácido Fortificante 37% - AlPrime',
             price: 2900,
             info: 'em até 12x de R\$ 24,17',
@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
             discountPercentage: 0,
           ),
           const ProductCard(
-            imageUrl: 'https://via.placeholder.com/100',
+            image: 'lib/assets/img2.png',
             productName: 'Condicionador Ácido Fortificante 37% - AlPrime',
             price: 2900,
             info: 'em até 12x de R\$ 24,17',
@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const ProductCard(
-            imageUrl: 'https://via.placeholder.com/100',
+            image: 'lib/assets/img1.png',
             productName: 'Condicionador Ácido Fortificante 37% - AlPrime',
             price: 2900,
             info: 'em até 12x de R\$ 24,17',
@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
             discountPercentage: 30,
           ),
           const ProductCard(
-            imageUrl: 'https://via.placeholder.com/100',
+            image: 'lib/assets/img2.png',
             productName: 'Condicionador Ácido Fortificante 37% - AlPrime',
             price: 2900,
             info: 'em até 12x de R\$ 24,17',
@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
             discountPercentage: 50,
           ),
           const ProductCard(
-            imageUrl: 'https://via.placeholder.com/100',
+            image: 'lib/assets/img2.png',
             productName: 'Condicionador Ácido Fortificante 37% - AlPrime',
             price: 2900,
             info: 'em até 12x de R\$ 24,17',
@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
             discountPercentage: 0,
           ),
           const ProductCard(
-            imageUrl: 'https://via.placeholder.com/100',
+            image: 'lib/assets/img1.png',
             productName: 'Condicionador Ácido Fortificante 37% - AlPrime',
             price: 2900,
             info: 'em até 12x de R\$ 24,17',

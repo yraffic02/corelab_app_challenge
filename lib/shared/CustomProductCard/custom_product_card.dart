@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ProductCard extends StatelessWidget {
-  final String imageUrl;
+  final String image;
   final String productName;
   final int price;
   final String info;
@@ -11,7 +11,7 @@ class ProductCard extends StatelessWidget {
 
   const ProductCard({
     super.key,
-    required this.imageUrl,
+    required this.image,
     required this.productName,
     required this.price,
     required this.info,
@@ -37,8 +37,8 @@ class ProductCard extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
           child: Row(
             children: [
-              Image.network(
-                imageUrl,
+              Image.asset(
+                image,
                 width: 100,
                 height: 100,
               ),
