@@ -1,8 +1,9 @@
+import 'package:corelab_app_challenge/blocs/history/history_bloc.dart';
+import 'package:corelab_app_challenge/blocs/history/history_event.dart';
 import 'package:corelab_app_challenge/blocs/products/product_bloc.dart';
 import 'package:corelab_app_challenge/blocs/products/product_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class CustomAppbar extends StatefulWidget implements PreferredSizeWidget {
   final FocusNode? focusNode;
@@ -41,16 +42,11 @@ class _CustomAppbarState extends State<CustomAppbar> {
     if (query.isEmpty) {
       return;
     }
-    final prefs = await SharedPreferences.getInstance();
-    final List<String> history = prefs.getStringList('search_history') ?? [];
-
     final productBloc = BlocProvider.of<ProductBloc>(context);
     productBloc.add(SearchProducts(query: query));
 
-    if (!history.contains(query)) {
-      history.add(query);
-      await prefs.setStringList('search_history', history);
-    }
+    final historytBloc = BlocProvider.of<HistoryBloc>(context);
+    historytBloc.add(AddHistory(history: query));
   }
 
   void _resetSearch(BuildContext context) {
@@ -83,7 +79,11 @@ class _CustomAppbarState extends State<CustomAppbar> {
                           color: Colors.white,
                         ),
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            '/',
+                            (Route<dynamic> route) => false,
+                          );
                         },
                       )
                     : const SizedBox(
