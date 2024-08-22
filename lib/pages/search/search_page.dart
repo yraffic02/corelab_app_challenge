@@ -84,9 +84,9 @@ class _SearchPageState extends State<SearchPage> {
                             const SizedBox(
                               height: 10,
                             ),
-                            const Text(
-                              'Não encontramos nenhum resultado parecido com "chinelo".',
-                              style: TextStyle(
+                            Text(
+                              'Não encontramos nenhum resultado parecido com "${_searchController.text}".',
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
                                 color: Color.fromRGBO(74, 101, 105, 1),
